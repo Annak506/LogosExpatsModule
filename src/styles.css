@@ -333,6 +333,10 @@ body {
     .slideshow-container {
       grid-template-columns: 1fr;
     }
+
+    .slideshow {
+        width: 90%; 
+    }
   
     .profielen {
       font-size: 26px;
