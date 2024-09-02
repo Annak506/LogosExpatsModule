@@ -1,0 +1,341 @@
+/* Algemene Stijlen */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+  }
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .grid {
+    display: grid;
+    grid-gap: 64px;
+    align-items: start;
+  }
+  
+  .grid img,
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .full-width {
+    grid-column: 1 / -1;
+  }
+  
+  .extraText {
+    display: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .extraText.show {
+    display: block;
+  }
+  
+  /* Header */
+  header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../images/schrijfmateriaal.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 260px;
+  }
+  
+  header h1 {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  header h2 {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  header h3 {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 5px;
+    margin: 0;
+  }
+  
+  header a {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    background: white;
+    text-decoration: none;
+    color: #272044;
+    padding: 16px 32px;
+    margin-top: 32px;
+  }
+  
+  /* Main */
+  main {
+    background-color: white;
+  }
+  
+  main h2 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    letter-spacing: 5px;
+    color: #272044;
+    opacity: 0.3;
+    text-transform: uppercase;
+  }
+  
+  main h3 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.5;
+    color: #272044;
+    margin: 0;
+  }
+  
+  main h4 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    color: #272044;
+    margin: 0;
+  }
+  
+  main p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #272044;
+    opacity: 0.7;
+  }
+  
+  /* Secties */
+  section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 100px;
+  }
+  
+  section.secondary {
+    background: #f8f8f8;
+  }
+  
+  /* Cards */
+  .card {
+    background: white;
+    margin: 30px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-body {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: -50px;
+    flex: 1;
+  }
+  
+  .card-body p {
+    margin-bottom: 24px;
+  }
+  
+  .card-body .btn {
+    display: inline;
+    margin-top: 10px;
+  }
+  
+  .card-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .card-header img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+  }
+  
+  /* Knoppen */
+  .btn,
+  .inklapBtn {
+    display: block;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 16px;
+    background-color: #7fbebc;
+    text-decoration: none;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Footer */
+  footer {
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../images/writer2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  footer h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+  footer p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.9;
+  }
+  
+  footer ul {
+    padding: 0;
+  }
+  
+  footer li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  footer a {
+    color: white;
+    opacity: 0.7;
+  }
+  
+  /* Grid Layouts */
+  .grid-2-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .grid-3-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .grid-3-columns-with-first-narrow {
+    grid-template-columns: 1fr 2fr 2fr;
+  }
+  
+  .grid-5-columns {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  
+  /* Slideshow */
+  .slideshow-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 20px;
+    padding-top: 20px;
+  }
+  
+  .slideshow {
+    position: relative;
+    width: 50%;
+  }
+  
+  .slides {
+    width: 100%;
+  }
+  
+  .active {
+    display: block;
+  }
+  
+  button.prev,
+  button.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 13px;
+    margin-top: -22px;
+    color: white;
+    background-color: rgba(179, 173, 173, 0.5);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  button.prev {
+    left: 0;
+  }
+  
+  button.next {
+    right: 0;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1260px) {
+    header {
+      padding: 60px 0;
+    }
+  
+    header h1 {
+      font-size: 48px;
+    }
+  
+    header h2 {
+      font-size: 20px;
+    }
+  
+    header h3 {
+      font-size: 12px;
+    }
+  
+    .grid {
+      grid-template-columns: 1fr;
+      grid-gap: 32px;
+      transition: all 0.1s ease; 
+    }
+  
+    section {
+      padding: 20px;
+    }
+  
+    .card-body {
+      padding: 30px 18px;
+      margin-bottom: -80px;
+    }
+  
+    .secondary {
+      padding: 40px 10px;
+    }
+  
+    .slideshow-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .profielen {
+      font-size: 26px;
+    }
+  }
+  
