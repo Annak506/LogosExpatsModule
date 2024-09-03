@@ -1,4 +1,89 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    const translateToEnglish = document.getElementById('translateToEnglish');
+    const translateToDutchBack = document.getElementById('translateToDutchBack');
+    const translateToEnglishBack = document.getElementById('translateToEnglishBack');
+    const translateToDutch = document.getElementById('translateToDutch');
+
+    const dutchContent = document.querySelectorAll('.dutch');
+    const englishContent = document.querySelectorAll('.english');
+    const englishButton = document.querySelectorAll('.englishButton');
+    const dutchButton = document.querySelectorAll('.dutchButton');
+
+    function showDutch() {
+        dutchContent.forEach(element => element.style.display = 'block');
+        englishContent.forEach(element => element.style.display = 'none');
+        englishButton.forEach(button => button.style.display = 'block');
+        dutchButton.forEach(button => button.style.display = 'none');
+        setupSlideshow(".anna-slide", ".anna-prev", ".anna-next"); 
+    }
+
+    function showEnglish() {
+        dutchContent.forEach(element => element.style.display = 'none');
+        englishContent.forEach(element => element.style.display = 'block');
+        englishButton.forEach(button => button.style.display = 'none');
+        dutchButton.forEach(button => button.style.display = 'block');
+        setupSlideshow(".anna-slide", ".anna-prev", ".anna-next"); 
+    }
+
+    translateToEnglish.addEventListener('click', function(event) {
+        event.preventDefault();
+        showEnglish();
+    });
+
+    translateToDutchBack.addEventListener('click', function(event) {
+        event.preventDefault();
+        showDutch();
+    });
+
+    translateToEnglishBack.addEventListener('click', function(event) {
+        event.preventDefault();
+        showEnglish();
+    });
+
+    translateToDutch.addEventListener('click', function(event) {
+        event.preventDefault();
+        showDutch();
+    });
+
+    // Standaard de Engelse inhoud tonen bij het laden van de pagina
+    showDutch();
+
+    function showSlide(slides, index) {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[index].style.display = "block";
+    }
+
+    function setupSlideshow(slideshowClass, prevBtnClass, nextBtnClass) {
+        const slideshows = document.querySelectorAll('.slideshow-container');
+        slideshows.forEach(slideshow => {
+            let slides = slideshow.querySelectorAll(slideshowClass + " img");
+            let prevBtn = slideshow.querySelector(prevBtnClass);
+            let nextBtn = slideshow.querySelector(nextBtnClass);
+            let index = 0;
+
+            showSlide(slides, index);
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', function() {
+                    index = (index > 0) ? index - 1 : slides.length - 1;
+                    showSlide(slides, index);
+                });
+
+                nextBtn.addEventListener('click', function() {
+                    index = (index < slides.length - 1) ? index + 1 : 0;
+                    showSlide(slides, index);
+                });
+            }
+        });
+    }
+});
+
+
+
+
+
     const leesMeerButtons = document.querySelectorAll('.leesMeerBtn');
     const inklapButtons = document.querySelectorAll('.inklapBtn');
 
@@ -70,34 +155,3 @@ card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
-    // Slideshows instellen (hier blijft de originele code ongewijzigd)
-    function showSlide(slides, index) {
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[index].style.display = "block";
-    }
-
-    function setupSlideshow(slideshowClass, prevBtnClass, nextBtnClass) {
-        let slides = document.querySelectorAll(slideshowClass + " img");
-        let index = 0;
-
-        showSlide(slides, index);
-
-        document.querySelector(prevBtnClass).addEventListener('click', function() {
-            index = (index > 0) ? index - 1 : slides.length - 1;
-            showSlide(slides, index);
-        });
-
-        document.querySelector(nextBtnClass).addEventListener('click', function() {
-            index = (index < slides.length - 1) ? index + 1 : 0;
-            showSlide(slides, index);
-        });
-    }
-
-    setupSlideshow(".anna-slide", ".anna-prev", ".anna-next");
-
-    // Initiele verborgen tekst en inklap knoppen instellen
-    document.querySelectorAll('.extraText').forEach(p => p.style.display = 'none');
-    document.querySelectorAll('.inklapBtn').forEach(btn => btn.style.display = 'none');
-});
